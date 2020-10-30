@@ -1,5 +1,6 @@
 package NoteTaker.Views
 
+import NoteTaker.Main.Groups
 import NoteTaker.Models.ViewModel
 
 import kotlin.system.exitProcess
@@ -31,6 +32,7 @@ class MainView() : ViewModel{
                 println("Error invaled imput")
             }
         }
+        Groups.save()
     }
 
     override fun action(input : Int) {

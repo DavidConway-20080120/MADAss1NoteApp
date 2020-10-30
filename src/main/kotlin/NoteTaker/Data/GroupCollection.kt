@@ -1,11 +1,19 @@
 package NoteTaker.Data
 
-class GroupCollection {
-    val allGroups = ArrayList<Group>()
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.File
 
+class GroupCollection {
+    var allGroups = ArrayList<Group>()
     init {
         addGroup("Default")
-        addGroup("test")
+        val input:String? = File("src/main/resources/data.json").readText()
+        if(input != null){// in file is found treads in and converts to array list
+            val myType = object : TypeToken<ArrayList<Group>>() {}.type
+            allGroups = Gson().fromJson(input, myType)
+        }
+
     }
 
     fun addGroup(titel :String){
@@ -21,6 +29,11 @@ class GroupCollection {
     fun getGroup(id:String?): Group?{
        var found :Group? = allGroups.find { p -> p.title == id}
         return found
+    }
+
+    fun save(){
+        val saveData = Gson().toJson(allGroups)
+        File("src/main/resources/data.json").writeText(saveData) //saves to data on close
     }
 
 }
