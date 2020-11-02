@@ -1,9 +1,10 @@
 package NoteTaker.Views
 
 import NoteTaker.Main.Groups
+import NoteTaker.Models.CreateModel
 import NoteTaker.Models.InputModel
 
-class NewGroupView() : InputModel {
+class NewGroupView() : CreateModel {
 
     override fun display() {
         println("Please input New Group data")
@@ -13,13 +14,18 @@ class NewGroupView() : InputModel {
 
     override fun input() {
         println("Titel: ")
-        val titel = readLine()
+        val title = readLine()
+        val infoIn:Array<String?> = arrayOf(title)
 
-        if(!titel.isNullOrBlank()){
-            println("created " + titel)
+    }
+
+    override fun create(info: Array<String?>) {
+        val title:String? = info[0]
+        if(!title.isNullOrBlank()){
+            println("created " + title)
             println("")
-            if(Groups.getGroup(titel) == null) {
-                Groups.addGroup(titel)
+            if(Groups.getGroup(title) == null) {
+                Groups.addGroup(title)
             }
             else{
                 println("Group already exists")
