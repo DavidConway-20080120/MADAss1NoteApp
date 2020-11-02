@@ -28,10 +28,15 @@ class GroupView(override val index: Int) : ListViewModel {
                 }
             }
             3 -> {
-                Groups.allGroups.remove(showGroup)
-                println("Delited" + showGroup.title)
-                println("")
-                back = true
+                if(showGroup.title != "Default") {
+                    Groups.allGroups.remove(showGroup)
+                    println("Delited" + showGroup.title)
+                    println("")
+                    back = true
+                }
+                else{
+                    println("can not delete Default group")
+                }
             }
             4-> {
                 back = true
