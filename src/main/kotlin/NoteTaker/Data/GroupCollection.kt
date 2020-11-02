@@ -7,7 +7,8 @@ import java.io.File
 class GroupCollection {
     var allGroups = ArrayList<Group>()
     init {
-        addGroup("Default")
+        val newGroup:Group = Group("Default")
+        addGroup(newGroup)
         try {
             val input: String? = File("src/main/resources/data.json").readText()
             if(input != null){// in file is found treads in and converts to array list
@@ -21,8 +22,7 @@ class GroupCollection {
 
     }
 
-    fun addGroup(titel :String){
-        val newGroup = Group(titel)
+    fun addGroup(newGroup :Group){
         allGroups.add(newGroup)
     }
 

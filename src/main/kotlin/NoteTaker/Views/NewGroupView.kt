@@ -1,11 +1,12 @@
 package NoteTaker.Views
 
+import NoteTaker.Data.Group
 import NoteTaker.Main.Groups
 import NoteTaker.Models.CreateModel
 import NoteTaker.Models.InputModel
 
 class NewGroupView() : CreateModel {
-
+    var newGroup:Group? = null
     override fun display() {
         println("Please input New Group data")
         println("")
@@ -26,7 +27,8 @@ class NewGroupView() : CreateModel {
             println("created " + title)
             println("")
             if(Groups.getGroup(title) == null) {
-                Groups.addGroup(title)
+                newGroup = Group(title)
+                Groups.addGroup(newGroup!!)
             }
             else{
                 println("Group already exists")
