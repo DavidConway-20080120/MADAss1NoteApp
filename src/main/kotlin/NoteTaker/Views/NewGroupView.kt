@@ -16,6 +16,7 @@ class NewGroupView() : CreateModel {
         println("Titel: ")
         val title = readLine()
         val infoIn:Array<String?> = arrayOf(title)
+        create(infoIn)
 
     }
 

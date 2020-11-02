@@ -61,7 +61,6 @@ class NoteView(override val index: Int, fromGroup:Group) : ListViewModel {
         while(!back) {
             val input: String?
             val option: Int
-
             println("Note: "+showNote.title)
             println("Text: "+showNote.text)
             println("Group: "+fromGroup.title)

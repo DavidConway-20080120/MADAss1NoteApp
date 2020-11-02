@@ -8,10 +8,15 @@ class GroupCollection {
     var allGroups = ArrayList<Group>()
     init {
         addGroup("Default")
-        val input:String? = File("src/main/resources/data.json").readText()
-        if(input != null){// in file is found treads in and converts to array list
-            val myType = object : TypeToken<ArrayList<Group>>() {}.type
-            allGroups = Gson().fromJson(input, myType)
+        try {
+            val input: String? = File("src/main/resources/data.json").readText()
+            if(input != null){// in file is found treads in and converts to array list
+                val myType = object : TypeToken<ArrayList<Group>>() {}.type
+                allGroups = Gson().fromJson(input, myType)
+            }
+        }
+        catch (e: Exception) {
+
         }
 
     }

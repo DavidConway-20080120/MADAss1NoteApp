@@ -3,10 +3,9 @@ package NoteTaker.Data
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class Note(titel:String, text:String) {
-    var title = titel
+class Note(title:String, text:String) {
+    var title = title
     var text = text
-
     var date = updateDate()
 
     fun updateDate(): String{ //returns the curent date time

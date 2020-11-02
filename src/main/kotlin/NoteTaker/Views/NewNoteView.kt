@@ -8,6 +8,7 @@ import NoteTaker.Models.InputModel
 
 class NewNoteView() : CreateModel {
 
+    var newNote: Note? = null
     override fun display() {
         val input: String?
         val option: Int
@@ -35,20 +36,20 @@ class NewNoteView() : CreateModel {
         val title:String? = info[2]
 
         if(!text.isNullOrBlank() && !title.isNullOrBlank()){
-            val newNote: Note = Note(title,text)
-            newNote.updateDate()
+            newNote = Note(title = title, text = text)
+            newNote!!.updateDate()
             val useGroup: Group? = Groups.getGroup(group)
             if(useGroup != null ){
                 println("created in Group " + useGroup?.title)
                 println("")
-                useGroup.addNote(newNote)
+                useGroup.addNote(newNote!!)
 
             }
             else{
                 println("created in Default Group")
                 println("")
                 val useGroup: Group? = Groups.allGroups.get(0)
-                useGroup?.addNote(newNote)
+                useGroup?.addNote(newNote!!)
             }
         }
         else{

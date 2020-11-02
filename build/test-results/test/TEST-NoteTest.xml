@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NoteTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-11-02T11:23:28" hostname="DESKTOP-FSMS0FN" time="0.106">
+  <properties/>
+  <testcase name="newNormalNote" classname="NoteTest" time="0.104"/>
+  <testcase name="newBadTitelNote" classname="NoteTest" time="0.0"/>
+  <testcase name="newBadTextNote" classname="NoteTest" time="0.001"/>
+  <system-out><![CDATA[created in Default Group
+
+error not created
+
+error not created
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
