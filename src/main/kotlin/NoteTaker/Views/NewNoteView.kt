@@ -4,15 +4,13 @@ import NoteTaker.Data.Group
 import NoteTaker.Data.Note
 import NoteTaker.Main.Groups
 import NoteTaker.Models.CreateModel
-import NoteTaker.Models.InputModel
 
+
+@Suppress("NAME_SHADOWING")
 class NewNoteView() : CreateModel {
 
     var newNote: Note? = null
     override fun display() {
-        val input: String?
-        val option: Int
-
         println("Please input New Note data")
         println("")
         input()
@@ -40,7 +38,7 @@ class NewNoteView() : CreateModel {
             newNote!!.updateDate()
             val useGroup: Group? = Groups.getGroup(group)
             if(useGroup != null ){
-                println("created in Group " + useGroup?.title)
+                println("created in Group " + useGroup.title)
                 println("")
                 useGroup.addNote(newNote!!)
 

@@ -2,7 +2,6 @@ package NoteTaker.Views
 
 import NoteTaker.Data.Group
 import NoteTaker.Data.Note
-import NoteTaker.Main.Groups
 import NoteTaker.Models.ListViewModel
 
 class NoteView(override val index: Int, fromGroup:Group) : ListViewModel {
@@ -41,7 +40,7 @@ class NoteView(override val index: Int, fromGroup:Group) : ListViewModel {
 
             }
             3->{
-                val swap:ChangeGroup = ChangeGroup(fromGroup,showNote)
+                val swap = ChangeGroup(fromGroup,showNote)
                 swap.display()
                 fromGroup = swap.newGroup!!
             }

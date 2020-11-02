@@ -1,7 +1,6 @@
 package NoteTaker.Views
 
 import NoteTaker.Data.Group
-import NoteTaker.Data.Note
 import NoteTaker.Models.ViewModel
 
 class OpenNoteView(group: Group) : ViewModel {
@@ -11,7 +10,7 @@ class OpenNoteView(group: Group) : ViewModel {
 
     override fun action(input: Int) {
         if(input < group.notes.size){
-            var showNote:NoteView = NoteView(input,group)
+            val showNote = NoteView(input,group)
             showNote.display()
         }
         else if(input == group.notes.size){

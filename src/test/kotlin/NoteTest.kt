@@ -1,8 +1,3 @@
-import NoteTaker.Data.Group
-import NoteTaker.Data.GroupCollection
-import NoteTaker.Data.Note
-import NoteTaker.Main.main
-import NoteTaker.Views.MainView
 import NoteTaker.Views.NewNoteView
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNull

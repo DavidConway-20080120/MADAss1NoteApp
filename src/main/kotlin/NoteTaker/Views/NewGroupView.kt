@@ -3,7 +3,6 @@ package NoteTaker.Views
 import NoteTaker.Data.Group
 import NoteTaker.Main.Groups
 import NoteTaker.Models.CreateModel
-import NoteTaker.Models.InputModel
 
 class NewGroupView() : CreateModel {
     var newGroup:Group? = null
